@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+<div class="col-md-6 offset-md-3">
+    
+        <h1>{{record.first_name}} {{record.last_name}}</h1>
+        <br />
+        <h2>{{record.rollno}}</h2>
+
+        <br />
+        
+        <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Subject</th>
+                <th scope="col">Attendance</th>
+                <th scope="col">Total Classes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Discrete Mathematics</td>
+                <td>{{record.CSO_204}}</td>
+                <td>20</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Computer Organisation</td>
+                <td>{{record.CSO_211}}</td>
+                <td>25</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Information Technology Workshop</td>
+                <td>{{record.CSE_205}}</td>
+                <td>25</td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>Probability and Statistics</td>
+                <td>{{record.MA_202}}</td>
+                <td>25</td>
+              </tr>
+              <tr>
+                <th scope="row">5</th>
+                <td>Introduction to Mechanical Engineering</td>
+                <td>{{record.ME_102}}</td>
+                <td>25</td>
+              </tr>
+              <tr>
+                <th scope="row">6</th>
+                <td>Development of Societies</td>
+                <td>{{record.DOS}}</td>
+                <td>25</td>
+              </tr>
+            </tbody>
+          </table>
+         
+</div>
+
+
+
+        
+ 
+{% else %}
+
+<div class="col-md-6 offset-md-3">
+    <h1> Please log in...</h1>
+</div>
+
+{% endif %}
+
+{% endblock %}

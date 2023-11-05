@@ -3,7 +3,33 @@
 {% block content %}
 
 {% if user.is_authenticated %}
-    <h1>HELLO WORLD!</h1>
+
+<div class="col-md-6 offset-md-3">
+
+
+    <table class="table table-striped">
+        <thead>
+            {% for x in record %}
+
+            <tr>
+                <td>{{x.first_name}}</td>
+                <td>{{x.last_name}}</td>
+                <td>{{x.rollno}}</td>
+                <td> <a class="btn btn-primary" href="{% url 'profile' x.rollno %}"> PROFILE </a></td>
+              </tr>
+    
+        {% endfor %}
+        </tbody>
+      </table>
+    
+    
+
+
+
+
+
+        
+ 
 {% else %}
 
 <div class="col-md-6 offset-md-3">
