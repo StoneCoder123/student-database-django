@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .forms import SignUpForm
 from .models import Record
+from django.db.models import Q
 
 
 def home(request):
@@ -65,3 +66,20 @@ def user_profile(request, pk):
     else:
         messages.success(request, "You must log in to view profile")
         redirect('home.html')
+
+
+def search(request):
+    search = request.GET.get('search')
+    print(search)
+
+    if not search == None:
+        x = search.split(" ")
+        res = Record.objects.filter(
+            (Q(first_name=search) | Q(last_name=search)) | Q(rollno=search) | (Q(last_name=x[min(len(x)-1, 1)]) & Q(first_name=x[0])))
+
+        return render(request, 'home.html', {'record': res})
+    return redirect('home')
+
+
+def update(request):
+    redirect('admin')

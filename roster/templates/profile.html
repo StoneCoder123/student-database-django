@@ -4,68 +4,88 @@
 
 {% if user.is_authenticated %}
 <div class="col-md-6 offset-md-3">
-    
-        <h1>{{record.first_name}} {{record.last_name}}</h1>
-        <br />
-        <h2>{{record.rollno}}</h2>
 
-        <br />
-        
-        <table class="table">
-            <thead class="thead-dark">
-              <tr>
+
+    <div class="card" style="width: 33rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{record.first_name}} {{record.last_name}}</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">{{record.rollno}}</h6>
+            <p class="card-text">Phone No: +91 {{record.phone}}</p>
+            <p class="card-text">Email: {{record.email}}</p>
+            <br />
+            <p class="card-text">Current CPI: {{record.CPI}}</p>
+
+
+            <!-- <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a> -->
+        </div>
+    </div>
+    <!-- 
+    <h1></h1>
+    <br />
+    <h2></h2>
+    <br />
+    <p></p>
+
+    <p>Email: {{record.email}}</p> -->
+
+    <br />
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
                 <th scope="col">#</th>
                 <th scope="col">Subject</th>
                 <th scope="col">Attendance</th>
                 <th scope="col">Total Classes</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
                 <th scope="row">1</th>
                 <td>Discrete Mathematics</td>
                 <td>{{record.CSO_204}}</td>
                 <td>20</td>
-              </tr>
-              <tr>
+            </tr>
+            <tr>
                 <th scope="row">2</th>
                 <td>Computer Organisation</td>
                 <td>{{record.CSO_211}}</td>
                 <td>25</td>
-              </tr>
-              <tr>
+            </tr>
+            <tr>
                 <th scope="row">3</th>
                 <td>Information Technology Workshop</td>
                 <td>{{record.CSE_205}}</td>
                 <td>25</td>
-              </tr>
-              <tr>
+            </tr>
+            <tr>
                 <th scope="row">4</th>
                 <td>Probability and Statistics</td>
                 <td>{{record.MA_202}}</td>
                 <td>25</td>
-              </tr>
-              <tr>
+            </tr>
+            <tr>
                 <th scope="row">5</th>
                 <td>Introduction to Mechanical Engineering</td>
                 <td>{{record.ME_102}}</td>
                 <td>25</td>
-              </tr>
-              <tr>
+            </tr>
+            <tr>
                 <th scope="row">6</th>
                 <td>Development of Societies</td>
                 <td>{{record.DOS}}</td>
                 <td>25</td>
-              </tr>
-            </tbody>
-          </table>
-         
+            </tr>
+        </tbody>
+    </table>
+
 </div>
 
 
 
-        
- 
+
+
 {% else %}
 
 <div class="col-md-6 offset-md-3">

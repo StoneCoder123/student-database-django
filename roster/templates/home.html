@@ -9,6 +9,15 @@
 
     <table class="table table-striped">
         <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Roll Number</th>
+                <th>Profile</th>
+
+
+
+            </tr>
             {% for x in record %}
 
             <tr>
@@ -16,41 +25,41 @@
                 <td>{{x.last_name}}</td>
                 <td>{{x.rollno}}</td>
                 <td> <a class="btn btn-primary" href="{% url 'profile' x.rollno %}"> PROFILE </a></td>
-              </tr>
-    
-        {% endfor %}
-        </tbody>
-      </table>
-    
-    
+            </tr>
+
+            {% endfor %}
+            </tbody>
+    </table>
 
 
 
 
 
-        
- 
-{% else %}
 
-<div class="col-md-6 offset-md-3">
-<h2 > LOGIN </h2> 
-<br />
-<form method="POST" action="{% url 'home' %}">
-    {% csrf_token %}
-    <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="text" class="form-control"  placeholder="Username" name="Username" required>
 
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control"  placeholder="Password" name="Password" required>
-      </div>
-      <br/>
-      <button type="submit" class="btn btn-primary">Login</button>
 
-</form>
-</div>
-{% endif %}
 
-{% endblock %}
+    {% else %}
+
+    <div class="col-md-6 offset-md-3">
+        <h2> LOGIN </h2>
+        <br />
+        <form method="POST" action="{% url 'home' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="text" class="form-control" placeholder="Username" name="Username" required>
+
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" placeholder="Password" name="Password" required>
+            </div>
+            <br />
+            <button type="submit" class="btn btn-primary">Login</button>
+
+        </form>
+    </div>
+    {% endif %}
+
+    {% endblock %}
