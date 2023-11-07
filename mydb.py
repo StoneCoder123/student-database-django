@@ -1,10 +1,10 @@
 import mysql.connector
 
-
+DATABASEPWD = ''
 dataBase = mysql.connector.connect(
     host='localhost',
     user='root',
-    passwd='Shikhatom@137'
+    passwd=DATABASEPWD,
 )
 
 # Create cursor object
